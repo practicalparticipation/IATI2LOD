@@ -244,7 +244,7 @@ class ActivityElements :
             # Required: name
             
             hash = hashlib.md5()
-            hash.update(name)
+            hash.update(name.encode('utf-8'))
 
             hash_name = hash.hexdigest()            
             
@@ -301,7 +301,7 @@ class ActivityElements :
             # Create hash
             # Required: name
             hash = hashlib.md5()
-            hash.update(name)
+            hash.update(name.encode('utf-8'))
 
             hash_name = hash.hexdigest()
             
@@ -373,7 +373,7 @@ class ActivityElements :
             # Create hash
             # Required: description
             hash = hashlib.md5()
-            hash.update(description)
+            hash.update(description.encode('utf-8')) #TD added as getting encoding errors when processing different language descriptions
 
             hash_description = hash.hexdigest()
             
@@ -449,23 +449,23 @@ class ActivityElements :
         
         organisation_text = AttributeHelper.attribute_text(xml, 'organisation')
         if not organisation_text == None:
-            hash.update(organisation_text[0])
+            hash.update(organisation_text[0].encode('utf-8'))
             hash_created = True
         person_name_text = AttributeHelper.attribute_text(xml, 'person-name')
         if not person_name_text == None:
-            hash.update(person_name_text[0])
+            hash.update(person_name_text[0].encode('utf-8'))
             hash_created = True
         telephone_text = AttributeHelper.attribute_text(xml, 'telephone')
         if not telephone_text == None:
-            hash.update(telephone_text[0])
+            hash.update(telephone_text[0].encode('utf-8'))
             hash_created = True
         email_text = AttributeHelper.attribute_text(xml, 'email')
         if not email_text == None:
-            hash.update(email_text[0])
+            hash.update(email_text[0].encode('utf-8'))
             hash_created = True
         mailing_address_text = AttributeHelper.attribute_text(xml, 'mailing-address')
         if not mailing_address_text == None:
-            hash.update(mailing_address_text[0])
+            hash.update(mailing_address_text[0].encode('utf-8'))
             hash_created = True
             
         if hash_created:
@@ -545,7 +545,7 @@ class ActivityElements :
             # Required: name
             
             hash = hashlib.md5()
-            hash.update(name)
+            hash.update(name.encode('utf-8'))
 
             hash_name = hash.hexdigest()
             
@@ -678,19 +678,19 @@ class ActivityElements :
         
         name_text = AttributeHelper.attribute_text(xml, 'name')
         if not name_text == None:
-            hash.update(name_text[0])
+            hash.update(name_text[0].encode('utf-8'))
             hash_created = True
         description_text = AttributeHelper.attribute_text(xml, 'description')
         if not description_text == None:
-            hash.update(description_text[0])
+            hash.update(description_text[0].encode('utf-8'))
             hash_created = True
         administrative_text = AttributeHelper.attribute_text(xml, 'administrative')
         if not administrative_text == None:
-            hash.update(administrative_text[0])
+            hash.update(administrative_text[0].encode('utf-8'))
             hash_created = True
         gazetteer_entry_text = AttributeHelper.attribute_text(xml, 'gazetteer-entry')
         if not gazetteer_entry_text == None:
-            hash.update(gazetteer_entry_text[0])
+            hash.update(gazetteer_entry_text[0].encode('utf-8'))
             hash_created = True
         if not administrative == None:
             # Keys
@@ -698,13 +698,13 @@ class ActivityElements :
             administrative_adm1 = AttributeHelper.attribute_key(administrative, 'adm1')
             administrative_adm2 = AttributeHelper.attribute_key(administrative, 'adm2')
             if not administrative_country == None:
-                hash.update(administrative_country)
+                hash.update(administrative_country.encode('utf-8'))
                 hash_created = True
             if not administrative_adm1 == None:
-                hash.update(administrative_adm1)
+                hash.update(administrative_adm1.encode('utf-8'))
                 hash_created = True
             if not administrative_adm2 == None:
-                hash.update(administrative_adm2)
+                hash.update(administrative_adm2.encode('utf-8'))
                 hash_created = True
         if not coordinates == None:
             # Keys
@@ -753,7 +753,7 @@ class ActivityElements :
                         hash_description = hashlib.md5()
                         
                         description_nolanguage = description.text
-                        hash_description.update(description_nolanguage)
+                        hash_description.update(description_nolanguage.encode('utf-8'))
                         
                         hash_location_description = hash_description.hexdigest()
                         
@@ -808,16 +808,16 @@ class ActivityElements :
                 
                 administrative_hash_text = AttributeHelper.attribute_text(xml, 'administrative')
                 if not administrative_hash_text == None:
-                    hash_administrative.update(administrative_hash_text[0])
+                    hash_administrative.update(administrative_hash_text[0].encode('utf-8'))
                     hash_administrative_created= True
                 if not administrative_country == None:
-                    hash_administrative.update(administrative_country)
+                    hash_administrative.update(administrative_country.encode('utf-8'))
                     hash_administrative_created= True
                 if not administrative_adm1 == None:
-                    hash_administrative.update(administrative_adm1)
+                    hash_administrative.update(administrative_adm1.encode('utf-8'))
                     hash_administrative_created= True
                 if not administrative_adm2 == None:
-                    hash_administrative.update(administrative_adm2)
+                    hash_administrative.update(administrative_adm2.encode('utf-8'))
                     hash_administrative_created= True
                 
                 if hash_administrative_created:
@@ -1394,13 +1394,13 @@ class ActivityElements :
             hash_created = True
         description_text = AttributeHelper.attribute_text(xml, 'description')
         if not description_text == None:
-            hash.update(description_text[0])
+            hash.update(description_text[0].encode('utf-8'))
             hash_created = True
         if not transaction_date == None:
             # Keys
             iso_date = AttributeHelper.attribute_key(transaction_date, 'iso-date')
             if not iso_date == None:
-                hash.update(iso_date)
+                hash.update(iso_date.encode('utf-8'))
                 hash_created = True
                 
         if (hash_created) or (not ref == None):
@@ -1468,7 +1468,7 @@ class ActivityElements :
                         hash_description = hashlib.md5()
                         
                         description_nolanguage = description.text
-                        hash_description.update(description_nolanguage)
+                        hash_description.update(description_nolanguage.encode('utf-8'))
                     
                         hash_transaction_description = hash_description.hexdigest()
                         
@@ -1837,7 +1837,7 @@ class ActivityElements :
                     
                     #Create hash
                     hash = hashlib.md5()
-                    hash.update(condition_text_text)
+                    hash.update(condition_text_text.encode('utf-8'))
                     
                     hash_condition = hash.hexdigest()
                     
@@ -1884,11 +1884,11 @@ class ActivityElements :
         
         result_title = AttributeHelper.attribute_text(xml, 'title')
         if not result_title == None:
-            hash.update(result_title[0])
+            hash.update(result_title[0].encode('utf-8'))
             hash_created = True
         result_description = AttributeHelper.attribute_text(xml, 'description')
         if not result_description == None:
-            hash.update(result_description[0])
+            hash.update(result_description[0].encode('utf-8'))
             hash_created = True
         
         if hash_created:
@@ -1927,7 +1927,7 @@ class ActivityElements :
                         hash_description = hashlib.md5()
                         
                         description_nolanguage = description.text
-                        hash_description.update(description_nolanguage)
+                        hash_description.update(description_nolanguage.encode('utf-8'))
                         
                         hash_location_description = hash_description.hexdigest()
                         
@@ -1965,11 +1965,11 @@ class ActivityElements :
                     
                     indicator_title = AttributeHelper.attribute_text(indicator, 'title')
                     if not indicator_title == None:
-                        hash.update(indicator_title[0])
+                        hash.update(indicator_title[0].encode('uft-8'))
                         hash_created = True
                     indicator_description = AttributeHelper.attribute_text(indicator, 'description')
                     if not indicator_description == None:
-                        hash.update(indicator_description[0])
+                        hash.update(indicator_description[0].encode('utf-8'))
                         hash_created = True
                     
                     if hash_created:
@@ -2041,7 +2041,7 @@ class ActivityElements :
                                 hash_indicator_description = hashlib.md5()
                                 
                                 description_nolanguage = description.text
-                                hash_indicator_description.update(description_nolanguage)
+                                hash_indicator_description.update(description_nolanguage.encode('utf-8'))
                                 
                                 hash_result_indicator_description = hash_indicator_description.hexdigest()
                                 
@@ -2674,7 +2674,7 @@ class OrganisationElements :
             # Required: name
             
             hash = hashlib.md5()
-            hash.update(name)
+            hash.update(name.encode('utf-8'))
 
             hash_name = hash.hexdigest()
             
@@ -3255,7 +3255,7 @@ class ProvenanceElements :
         
         self.iati = namespace
         
-        self.source = Namespace(self.iati['graph/' + str(self.type) + '/' + str(self.id)])
+        self.source = URIRef(self.iati['graph/' + str(self.type) + '/' + str(self.id)]) #Was originally Namespace() rather tha URIRef. TD changed as getting error
         
         self.provenance.add((self.source,
                              RDF.type,
@@ -3414,19 +3414,21 @@ class ProvenanceElements :
         @value: The value of the json.'''
         
         if (not value == 'null') and (not str(value) == "") and (not value == None):
+            try: #TD added try/except due to 'String indices' must be integer error. ToDo: look more into error
+	            self.provenance.add((self.source,
+	                                 self.iati['source-document-author'],
+	                                 self.source['/author']))
             
-            self.provenance.add((self.source,
-                                 self.iati['source-document-author'],
-                                 self.source['/author']))
+	            self.provenance.add((self.source['/author'],
+	                                 self.iati['author-email'],
+	                                 Literal(value)))
             
-            self.provenance.add((self.source['/author'],
-                                 self.iati['author-email'],
-                                 Literal(value)))
-            
-            self.provenance.add((self.source['/author'],
-                                 RDF.type,
-                                 self.iati['author']))    
-            
+	            self.provenance.add((self.source['/author'],
+	                                 RDF.type,
+	                                 self.iati['author']))    
+            except Exception, e:
+				print e
+
     def download_url(self, value):
         '''Converts the JSON of the download_url element to a RDFLib self.graph.
         

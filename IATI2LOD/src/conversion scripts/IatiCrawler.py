@@ -188,7 +188,7 @@ def main():
     
     # Initial settings
     max_limit = 1000
-    folder = "/media/Acer/School/IATI-data/xml/"
+    folder = "/Users/timdavies/Documents/Business/Projects/CABI/Linked_Development/data/iati/"
     iati_url = "http://www.iatiregistry.org/api/"
     retrieve = ['activities', 'organisations', 'codelists']
     
