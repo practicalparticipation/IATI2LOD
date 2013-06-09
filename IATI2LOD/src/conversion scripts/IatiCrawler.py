@@ -190,7 +190,7 @@ def main():
     max_limit = 1000
     folder = "/home/iati/xml/"
     iati_url = "http://www.iatiregistry.org/api/"
-    retrieve = ['activities', 'organisations', 'codelists']
+    retrieve = ['codelists','organisations','activities']
     
     # Last time the script was run: "2013-01-06"
     last_time_updated = "1990"
