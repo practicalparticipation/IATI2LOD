@@ -8,8 +8,8 @@ import xml.etree.ElementTree as ET
 import glob, os, sys, re
 
 # Settings
-turtle_folder = "/media/Acer/School/IATI-data/mappings/"
-activities_folder = "/media/Acer/School/IATI-data/activity/"
+turtle_folder = "/home/iati/mappings/"
+activities_folder = "/home/iati/activity/"
 
 locations = {}
 location_count = 0

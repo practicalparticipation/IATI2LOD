@@ -7,8 +7,8 @@ import xml.etree.ElementTree as ET
 import os, sys, httplib2, urllib, datetime, AddProvenance
 
 # Settings
-turtle_folder = "/media/Acer/School/IATI-data/mappings/Geonames/"
-country_codelist = "/media/Acer/School/IATI-data/xml/codelists/Country.xml"
+turtle_folder = "/home/iati/mappings/Geonames/"
+country_codelist = "/home/iati/xml/codelists/Country.xml"
 webservice = "http://api.geonames.org/search?"
 username = "KasperBrandt"
 

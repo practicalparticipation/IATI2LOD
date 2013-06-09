@@ -8,9 +8,9 @@ import xml.etree.ElementTree as ET
 import os, sys, re, glob, urllib, httplib2, datetime, AddProvenance
 
 # Settings
-turtle_folder = "/media/Acer/School/IATI-data/mappings/Factbook/"
-turtle_folder_db = "/media/Acer/School/IATI-data/mappings/DBPedia/"
-country_codelist = "/media/Acer/School/IATI-data/xml/codelists/Country.xml"
+turtle_folder = "/home/iati/mappings/Factbook/"
+turtle_folder_db = "/home/iati/mappings/DBPedia/"
+country_codelist = "/home/iati/xml/codelists/Country.xml"
 start_time = datetime.datetime.now()
 
 if not os.path.isdir(turtle_folder):

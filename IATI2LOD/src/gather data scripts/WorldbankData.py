@@ -6,9 +6,9 @@ import xml.etree.ElementTree as ET
 from rdflib import Namespace, Graph, Literal, RDF
 
 # Settings
-worldbank_folder = "/media/Acer/School/IATI-data/dataset/WorldBank/"
-worldbank_file = "/media/Acer/School/IATI-data/mappings/WorldBank/worldbank-countries.ttl"
-indicator_file = "/media/Acer/School/IATI-data/dataset/WorldBank/worldbank-indicator.ttl"
+worldbank_folder = "/home/iati/dataset/WorldBank/"
+worldbank_file = "/home/iati/mappings/WorldBank/worldbank-countries.ttl"
+indicator_file = "/home/iati/dataset/WorldBank/worldbank-indicator.ttl"
 
 indicator_data = Graph()
 indicator_data.bind('wbld-dataset', "http://worldbank.270a.info/dataset/")

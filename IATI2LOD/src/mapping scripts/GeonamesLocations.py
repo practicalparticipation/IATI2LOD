@@ -584,8 +584,8 @@ def main():
     coordinates (if available) of a location to Geonames.'''
     
     # Settings
-    turtle_folder = "/media/Acer/School/IATI-data/mappings/Geonames/"
-    locations_file = "/media/Acer/School/IATI-data/mappings/locations.help"
+    turtle_folder = "/home/iati/mappings/Geonames/"
+    locations_file = "/home/iati/mappings/locations.help"
     Iati = Namespace("http://purl.org/collections/iati/")
     start_time = datetime.datetime.now()
     

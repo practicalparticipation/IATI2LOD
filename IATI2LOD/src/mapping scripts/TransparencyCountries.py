@@ -8,8 +8,8 @@ import xml.etree.ElementTree as ET
 import os, sys, datetime, AddProvenance
 
 # Settings
-turtle_folder = "/media/Acer/School/IATI-data/mappings/Transparency/"
-country_codelist = "/media/Acer/School/IATI-data/xml/codelists/Country.xml"
+turtle_folder = "/home/iati/mappings/Transparency/"
+country_codelist = "/home/iati/xml/codelists/Country.xml"
 
 if not os.path.isdir(turtle_folder):
     os.makedirs(turtle_folder)

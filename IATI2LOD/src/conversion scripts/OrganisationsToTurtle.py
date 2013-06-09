@@ -9,8 +9,8 @@ def main():
     '''Converts Organisation XMLs to Turtle files and stores these to local folder.'''
     
     # Settings
-    xml_folder = "/media/Acer/School/IATI-data/xml/organisations/"
-    turtle_folder = "/media/Acer/School/IATI-data/organisation/"
+    xml_folder = "/home/iati/xml/organisations/"
+    turtle_folder = "/home/iati/organisation/"
     Iati = Namespace("http://purl.org/collections/iati/")
         
     if not os.path.isdir(turtle_folder):
@@ -105,6 +105,10 @@ def main():
                     
                     with open(doc_folder + str(id.replace('/','%2F')) + '.ttl', 'w') as turtle_file:
                         turtle_file.write(graph_turtle)
+
+                    # The following outputs enable the Virutuoso Bulk loader process to put files into the right graphs.
+                    with open(doc_folder + str(id.replace('/','%2F')) + '.ttl.graph','w') as graph_file:
+                        graph_file.write(str(Iati) + 'graph/organisation/' + str(id))
                 
                 organisation_count += 1
                 organisation_ids.append(id)
@@ -130,7 +134,12 @@ def main():
             
             with open(doc_folder + 'provenance-' + doc_id + '.ttl', 'w') as turtle_file:
                 turtle_file.write(provenance_turtle)
-        
+
+            # The following outputs enable the Virutuoso Bulk loader process to put files into the right graphs.
+            with open(doc_folder + 'provenance-' + doc_id + '.ttl.graph','w') as graph_file:
+                graph_file.write(str(Iati) + 'graph/provenance/')
+
+       
     print "Done!"
     
 if __name__ == "__main__":

@@ -5,8 +5,8 @@ import os, sys, datetime, urllib2, AddProvenance
 from rdflib import Namespace, Graph
 
 # Settings
-factbook_folder = "/media/Acer/School/IATI-data/dataset/Factbook/"
-factbook_file = "/media/Acer/School/IATI-data/mappings/Factbook/factbook-countries.ttl"
+factbook_folder = "/home/iati/dataset/Factbook/"
+factbook_file = "/home/iati/mappings/Factbook/factbook-countries.ttl"
 
 if not os.path.isdir(factbook_folder):
     os.makedirs(factbook_folder)

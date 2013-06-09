@@ -8,9 +8,9 @@ import xml.etree.ElementTree as ET
 import os, sys, datetime, AddProvenance
 
 # Settings
-turtle_folder = "/media/Acer/School/IATI-data/mappings/WorldBank/"
-turtle_folder_euro = "/media/Acer/School/IATI-data/mappings/Eurostat/"
-country_codelist = "/media/Acer/School/IATI-data/xml/codelists/Country.xml"
+turtle_folder = "/home/iati/mappings/WorldBank/"
+turtle_folder_euro = "/home/iati/mappings/Eurostat/"
+country_codelist = "/home/iati/xml/codelists/Country.xml"
 
 start_time = datetime.datetime.now()
 

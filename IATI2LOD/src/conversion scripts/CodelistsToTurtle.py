@@ -9,8 +9,8 @@ def main():
     '''Converts Codelist XMLs to Turtle files and stores these to local folder.'''
     
     # Settings
-    xml_folder = "/media/Acer/School/IATI-data/xml/codelists/"
-    turtle_folder = "/media/Acer/School/IATI-data/codelist/"
+    xml_folder = "/home/iati/xml/codelists/"
+    turtle_folder = "/home/iati/codelist/"
     Iati = Namespace("http://purl.org/collections/iati/")
         
     if not os.path.isdir(turtle_folder):
@@ -51,6 +51,10 @@ def main():
             
             with open(doc_folder + id.replace('/','%2F') + '.ttl', 'w') as turtle_file:
                 turtle_file.write(graph_turtle)
+                
+            # The following outputs enable the Virutuoso Bulk loader process to put files into the right graphs.
+             with open(doc_folder + id.replace('/','%2F') + '.ttl.graph','w') as graph_file:
+                 graph_file.write(str(Iati) + 'graph/codelist/' + str(id))
             
             # Add provenance of last-updated, version and source document
             provenance.add((URIRef(Iati + 'graph/codelist/' + str(id)),
@@ -87,7 +91,11 @@ def main():
         
         with open(doc_folder + 'provenance-' + str(id) + '.ttl', 'w') as turtle_file:
             turtle_file.write(provenance_turtle)
-        
+
+        # The following outputs enable the Virutuoso Bulk loader process to put files into the right graphs.
+        with open(doc_folder + 'provenance-' + str(id) + '.ttl.graph','w') as graph_file:
+            graph_file.write(str(Iati) + 'graph/provenance/')
+   
     print "Done!"
 
 if __name__ == "__main__":

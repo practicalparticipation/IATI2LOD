@@ -9,8 +9,8 @@ def main():
     '''Converts Activity XMLs to Turtle files and stores these to local folder.'''
     
     # Settings
-    xml_folder = "/Users/timdavies/Documents/Business/Projects/CABI/Linked_Development/data/iati/activities/"
-    turtle_folder = "/Users/timdavies/Documents/Business/Projects/CABI/Linked_Development/data/iati-ld/"
+    xml_folder = "/home/iati/xml/activities/"
+    turtle_folder = "/home/iati/"
     Iati = Namespace("http://linked-development.org/iati/")
     
     if not os.path.isdir(turtle_folder):

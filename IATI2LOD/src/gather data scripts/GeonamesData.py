@@ -5,9 +5,9 @@ import os, sys, datetime, urllib2, AddProvenance
 from rdflib import Namespace, Graph
 
 # Settings
-geonames_folder = "/media/Acer/School/IATI-data/dataset/Geonames/"
-geonames_files = ["/media/Acer/School/IATI-data/mappings/Geonames/geonames-countries.ttl",
-                 "/media/Acer/School/IATI-data/mappings/Geonames/geonames-locations.ttl"]
+geonames_folder = "/home/iati/dataset/Geonames/"
+geonames_files = ["/home/iati/mappings/Geonames/geonames-countries.ttl",
+                 "/home/iati/mappings/Geonames/geonames-locations.ttl"]
 
 if not os.path.isdir(geonames_folder):
     os.makedirs(geonames_folder)

@@ -5,9 +5,9 @@ import os, sys, datetime, urllib2, AddProvenance
 from rdflib import Namespace, Graph
 
 # Settings
-dbpedia_folder = "/media/Acer/School/IATI-data/dataset/DBPedia/"
-dbpedia_files = ["/media/Acer/School/IATI-data/mappings/DBPedia/dbpedia-countries-via-factbook.ttl",
-                 "/media/Acer/School/IATI-data/mappings/DBPedia/dbpedia-organisations.ttl"]
+dbpedia_folder = "/home/iati/dataset/DBPedia/"
+dbpedia_files = ["/home/iati/mappings/DBPedia/dbpedia-countries-via-factbook.ttl",
+                 "/home/iati/mappings/DBPedia/dbpedia-organisations.ttl"]
 
 if not os.path.isdir(dbpedia_folder):
     os.makedirs(dbpedia_folder)

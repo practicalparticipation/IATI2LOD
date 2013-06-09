@@ -8,11 +8,11 @@ import xml.etree.ElementTree as ET
 import os, sys, datetime, AddProvenance
 
 # Settings
-turtle_folder_oecd = "/media/Acer/School/IATI-data/mappings/OECD/"
-turtle_folder_bfs = "/media/Acer/School/IATI-data/mappings/BFS/"
-turtle_folder_ecb = "/media/Acer/School/IATI-data/mappings/ECB/"
-turtle_folder_fao = "/media/Acer/School/IATI-data/mappings/FAO/"
-dbpedia_file = "/media/Acer/School/IATI-data/mappings/DBPedia/dbpedia-countries-via-factbook.ttl"
+turtle_folder_oecd = "/home/iati/mappings/OECD/"
+turtle_folder_bfs = "/home/iati/mappings/BFS/"
+turtle_folder_ecb = "/home/iati/mappings/ECB/"
+turtle_folder_fao = "/home/iati/mappings/FAO/"
+dbpedia_file = "/home/iati/mappings/DBPedia/dbpedia-countries-via-factbook.ttl"
 
 if not os.path.isdir(turtle_folder_oecd):
     os.makedirs(turtle_folder_oecd)
