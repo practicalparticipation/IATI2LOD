@@ -9,9 +9,9 @@ def main():
     '''Converts Activity XMLs to Turtle files and stores these to local folder.'''
     
     # Settings
-    xml_folder = "/media/Acer/School/IATI-data/xml/activities/"
-    turtle_folder = "/media/Acer/School/IATI-data/activity/"
-    Iati = Namespace("http://purl.org/collections/iati/")
+    xml_folder = "/Users/timdavies/Documents/Business/Projects/CABI/Linked_Development/data/iati/activities/"
+    turtle_folder = "/Users/timdavies/Documents/Business/Projects/CABI/Linked_Development/data/iati-ld/"
+    Iati = Namespace("http://linked-development.org/iati/")
     
     if not os.path.isdir(turtle_folder):
         os.makedirs(turtle_folder)
@@ -107,7 +107,14 @@ def main():
             
             with open(doc_folder + 'provenance-' + doc_id + '.ttl', 'w') as turtle_file:
                 turtle_file.write(provenance_turtle)
-        
+
+            # The following outputs enable the Virutuoso Bulk loader process to put files into the right graphs.
+            with open(doc_folder + 'global.graph','w') as graph_file:
+                graph_file.write(str(Iati) + 'graph/activity/' + doc_id)
+
+            with open(doc_folder + 'provenance-' + doc_id + '.ttl.graph','w') as graph_file:
+                graph_file.write(str(Iati) + 'graph/provenance/')
+
     print "Failed:"
     
     for fail in failed_elements:
